@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { CardPlan, CardPlanRow } from './components/styled.components';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <h1>Planos</h1>
+      <CardPlanRow>
+        <CardPlan>
+          Olha
+        </CardPlan>
+        <CardPlan>
+          Olha
+        </CardPlan>
+        <CardPlan>
+          Olha
+        </CardPlan>
+      </CardPlanRow>
       </header>
+      
     </div>
   );
 }
