@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { CardPlan, CardPlanRow } from "../styled.components";
+import PlansList from "../PlansList";
+
+import './style.css'
+
+import { CardPlatform, CardPlatformRow } from "../styled.components";
 // import PlansCard from "./PlansCard";
 // API
 const baseUrl = "http://private-59658d-celulardireto2017.apiary-mock.com";
 
-const PlansList = () => {
+const PlatformsList = () => {
   const [infos, setInfo] = useState({});
   const [showDetails, setShowDetails] = useState(false);
   const [showDetailsByPlatform, setShowDetailsByPlatform] = useState(null);
@@ -32,17 +36,13 @@ const PlansList = () => {
   }
 
   return (
-    <div className=".PlansList">
+    <div className="PlansList">
       <h1>Planos</h1>
       {infos.plataformas && (
-          <CardPlanRow>
-        <ul>
+          <CardPlatformRow>
           {infos.plataformas.map((plataforma, index) => (
-            <li key={plataforma.sku}>
-                <CardPlan>
-                     {plataforma.descricao}
-                </CardPlan>
-              {/* <PlansCard
+                <CardPlatform key={plataforma.sku}>
+                     <PlansList
                 sku={plataforma.sku}
                 indexButton={index}
                 descricao={plataforma.descricao}
@@ -50,14 +50,13 @@ const PlansList = () => {
                 onClickShowMore={() =>
                   toggleShowDetailsByPlatform(plataforma.sku)
                 }
-              /> */}
-            </li>
+              />
+                </CardPlatform>
           ))}
-        </ul>
-        </CardPlanRow>
+        </CardPlatformRow>
       )}
     </div>
   );
 };
 
-export default PlansList;
+export default PlatformsList;

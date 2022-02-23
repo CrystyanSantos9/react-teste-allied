@@ -1,0 +1,43 @@
+.slider{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 100%;
+    border-radius: 10px;
+    background: red;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 55%;
+    right: 20px;
+    font-size: 3rem;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.left-arrow {
+    position: absolute;
+    top: 55%;
+    left: 20px;
+    font-size: 3rem;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slide{
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.3);
+}
