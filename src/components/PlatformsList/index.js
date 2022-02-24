@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { CardPlan, CardPlanRow } from "../styled.components";
+import {
+  Link
+} from "react-router-dom";
 // import PlansCard from "./PlansCard";
 // API
 const baseUrl = "http://private-59658d-celulardireto2017.apiary-mock.com";
 
-const PlansList = () => {
+const PlatformsList = () => {
   const [infos, setInfo] = useState({});
   const [showDetails, setShowDetails] = useState(false);
   const [showDetailsByPlatform, setShowDetailsByPlatform] = useState(null);
@@ -28,7 +31,11 @@ const PlansList = () => {
   }, []);
 
   if (!infos) {
-    return null;
+    return (
+      <div>
+        <h1>...carregando</h1>
+      </div>
+    );
   }
 
   return (
@@ -41,6 +48,9 @@ const PlansList = () => {
             <li key={plataforma.sku}>
                 <CardPlan>
                      {plataforma.descricao}
+                     <button>
+                    <Link to="/cart">Eu quero!</Link>
+                  </button>
                 </CardPlan>
               {/* <PlansCard
                 sku={plataforma.sku}
@@ -54,10 +64,11 @@ const PlansList = () => {
             </li>
           ))}
         </ul>
+    
         </CardPlanRow>
       )}
     </div>
   );
 };
 
-export default PlansList;
+export default PlatformsList;
