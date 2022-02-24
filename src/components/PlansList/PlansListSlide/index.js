@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import {
+    Link
+  } from "react-router-dom";
 import './style.css'
 import {FaArrowAltCircleRight, FaArrowAltCircleLeft} from 'react-icons/fa'
 import { SlideButtonPrimary } from '../../styled.components';
@@ -26,8 +29,6 @@ const PlansListSlide = ({planos})=>{
       if (!listPlanos || listPlanosLenght <=0) {
         return null;
       }
-
-
 
 //  {/* Descrição dos planos da plataforma escolhido */}
 //  {planos.planos.map((plano, index) => (
@@ -57,7 +58,7 @@ return (
                    <p>
                      R$  { plano.valor} /mês
                    </p>
-                  <SlideButtonPrimary>Eu quero!</SlideButtonPrimary>
+                  <SlideButtonPrimary><Link to="/cart">Eu quero!</Link></SlideButtonPrimary>
                    </>
                 )}
             </div>

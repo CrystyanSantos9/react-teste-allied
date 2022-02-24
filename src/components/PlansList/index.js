@@ -7,7 +7,7 @@ const baseUrl = "http://private-59658d-celulardireto2017.apiary-mock.com";
 
 const PlansList = ({ sku, descricao, showDetails, onClickShowMore }) => {
   const [skuId, setSkuId] = useState(sku);
-  const [descricaoId, setDescricaoId] = useState(descricao);
+  const [plataforma, setPlataforma] = useState(descricao);
   const [planos, setPlano] = useState({});
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const PlansList = ({ sku, descricao, showDetails, onClickShowMore }) => {
       {/* {planos.planos && showDetails && ( */}
         {planos.planos && (
        <>
-        <CardPlatformDescriptionTitle>{descricaoId}</CardPlatformDescriptionTitle>
+        <CardPlatformDescriptionTitle>{plataforma}</CardPlatformDescriptionTitle>
          <PlansListSlide planos={planos.planos}/>
          </>
       )}

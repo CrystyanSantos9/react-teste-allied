@@ -1,8 +1,5 @@
-.PlansList{
+.platformlist_container{
     box-sizing: border-box;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-
-    /* background: red; */
+    width: 100%;
+    background: red; 
 }

@@ -1,4 +1,5 @@
 .slider{
+    top: 10px;
     position: relative;
     display: flex;
     justify-content: center;

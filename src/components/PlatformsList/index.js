@@ -3,6 +3,7 @@ import { CardPlatform, CardPlatformRow } from "../styled.components";
 import {
   Link
 } from "react-router-dom";
+import PlansList from "../PlansList";
 // import PlansCard from "./PlansCard";
 // API
 const baseUrl = "http://private-59658d-celulardireto2017.apiary-mock.com";
@@ -39,36 +40,20 @@ const PlatformsList = () => {
   }
 
   return (
-    <div className=".PlansList">
-      <h1>Planos</h1>
+    <>
       {infos.plataformas && (
-          <CardPlatformRow>
-        <ul>
+        <CardPlatformRow>
           {infos.plataformas.map((plataforma, index) => (
-            <li key={plataforma.sku}>
                 <CardPlatform>
-                     {plataforma.descricao}
-                     <button>
-                    <Link to="/cart">Eu quero!</Link>
-                  </button>
+                     {/* {plataforma.descricao} */}
+                     <PlansList descricao={plataforma.descricao} sku={plataforma.sku}/>
                 </CardPlatform>
-              {/* <PlansCard
-                sku={plataforma.sku}
-                indexButton={index}
-                descricao={plataforma.descricao}
-                showDetails={showDetailsByPlatform === plataforma.sku}
-                onClickShowMore={() =>
-                  toggleShowDetailsByPlatform(plataforma.sku)
-                }
-              /> */}
-            </li>
           ))}
-        </ul>
-    
-        </CardPlatformRow>
+          </CardPlatformRow>
       )}
-    </div>
+      </>
   );
 };
 
 export default PlatformsList;
+{/* <Link to="/cart">Eu quero!</Link> */}
